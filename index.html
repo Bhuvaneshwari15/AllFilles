@@ -1,23 +1,9 @@
-
 <html>
-<head>
-<title>test</title>
-<link rel="stylesheet" href="http://maxcd.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
 <body>
-<form action="/submit" method="post">
-<feildset>
- <label for="name">name:</label>
-<input type="text" id="name" name="name" autofocus/>
-</br>
-<label for="email">email</label>
-<input type="email" id="email" name="email"/>
-</br>
-<label for="username">username:</label>
-<input type="textbox" id="username" name="username"/>
-<br/>
-<input type="submit" value="createprofile"/>
-</fieldset>
+<form action="http://localhost:8000/process_get">
+Firstname:<input type="text" name="first_name"><br>
+Lastname:<input type="text" name="last_name"><br>
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
