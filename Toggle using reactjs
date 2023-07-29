@@ -1,0 +1,20 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [bgColor, setBgColor] = useState('#ffffff'); // Initial background color
+
+  const toggleBackgroundColor = () => {
+    // Generate a random color for toggling the background
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    setBgColor(randomColor);
+  };
+
+  return (
+    <div className="App" style={{ backgroundColor: bgColor }}>
+      <button onClick={toggleBackgroundColor}>Toggle Background Color</button>
+      {/* Other components and content go here */}
+    </div>
+  );
+}
+
+export default App;
