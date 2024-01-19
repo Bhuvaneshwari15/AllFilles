@@ -1,15 +1,62 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>webpage</title>
-<link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
 <style>
-/* internal css*/
-body{
-background-color:pink;
+/* Add your custom styles for index.html here */
+body {
+    background-color: #f8f9fa;
 }
+
+.container {
+    max-width: 600px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary,
+.btn-success,
+.btn-info {
+    width: 100%;
+    margin-top: 10px;
+}
+
 </style>
+</head>
 <body>
-<h1 style="color:red";>helloworld</h1>
-<p> this is a simple webpage</p>
+    <div class="container mt-5">
+        <h1 class="display-4 text-center mb-4">Churn Prediction App</h1>
+
+        <form action="/load_data" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file" class="h5">Choose a CSV file:</label>
+                <input type="file" class="form-control-file" name="file" accept=".csv" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Load Data</button>
+        </form>
+
+        <div class="text-center">
+            <a href="/train_model" class="btn btn-success btn-lg">Train Model</a>
+            <a href="/visualize_results" class="btn btn-info btn-lg">Visualize Results</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
